@@ -16,7 +16,7 @@ public class MyAppWebMvcConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**/*")
+        registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/public/")
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver() {
@@ -30,7 +30,7 @@ public class MyAppWebMvcConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**/*")
+        registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")
