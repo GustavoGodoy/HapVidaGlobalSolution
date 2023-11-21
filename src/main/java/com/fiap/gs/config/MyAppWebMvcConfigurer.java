@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 
 @Configuration
-@EnableWebMvc
 public class MyAppWebMvcConfigurer implements WebMvcConfigurer {
 
     @Override
