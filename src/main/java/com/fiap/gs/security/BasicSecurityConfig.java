@@ -34,8 +34,6 @@ public class BasicSecurityConfig {
 		http
 				.csrf()
 				.disable()
-				.cors()
-				.disable()
 				.authorizeHttpRequests((authorize) -> authorize
 						.requestMatchers("/usuarios/cadastrar").permitAll()
 						.requestMatchers("/usuarios/logar").permitAll()
