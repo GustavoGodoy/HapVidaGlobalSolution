@@ -34,8 +34,8 @@ public class BasicSecurityConfig {
 
 		http.httpBasic();
 		http
-				.csrf()
-				.disable()
+				.csrf(csrf -> csrf.disable())
+				.cors(cors -> cors.disable())
 				.authorizeHttpRequests((authorize) -> authorize
 						.requestMatchers("/usuarios/cadastrar").permitAll()
 						.requestMatchers("/usuarios/logar").permitAll()
@@ -44,19 +44,6 @@ public class BasicSecurityConfig {
 				);
 
 		return http.build();
-	}
-
-	@Bean
-	public FilterRegistrationBean corsFilter() {
-		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		CorsConfiguration config = new CorsConfiguration();
-		config.addAllowedOrigin("*");
-		config.addAllowedHeader("*");
-		config.addAllowedMethod("*");
-		source.registerCorsConfiguration("/**", config);
-		FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-		bean.setOrder(0);
-		return bean;
 	}
 
 	private AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
