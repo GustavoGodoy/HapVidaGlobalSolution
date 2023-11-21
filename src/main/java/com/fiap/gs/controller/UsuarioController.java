@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 
 import com.fiap.gs.model.UserLogin;
@@ -19,7 +20,7 @@ import com.fiap.gs.model.Usuario;
 import com.fiap.gs.repository.UsuarioRepository;
 import com.fiap.gs.service.UsuarioService;
 
-@Controller
+@RestController
 @RequestMapping("/usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
